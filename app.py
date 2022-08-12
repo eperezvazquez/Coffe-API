@@ -1,3 +1,4 @@
+#!pip install flask
 from flask import Flask, render_template, jsonify, request
 import pickle
 import pandas as pd
@@ -5,13 +6,14 @@ import numpy as np
 
 app = Flask(__name__) # hace referencia al nombre del archivo
 
-@app.route('/')
-def hello_flask():
-    return 'Hello Flask'
 
-@app.route('/inicio')
-def show_home():
-    return render_template('index.html')
+#@app.route('/')
+#def hello_flask():
+ #   return 'Hello Flask'
+
+#@app.route('/inicio')
+#def show_home():
+   # return render_template('index.html')
 
 @app.route('/<string:country>/<string:variety>/<float:aroma>/<float:aftertaste>/<float:acidity>/<float:body>/<float:balance>/<float:moisture>')
 def result(country, variety, aroma, aftertaste, acidity, body, balance, moisture):
@@ -40,6 +42,19 @@ if __name__ == '__main__':
 
 
 #probar
+
+#La URL para probar es por Yes https://5000-eperezvazquez-coffeapi-02j2zdcqkh1.ws-us60.gitpod.io/Guatemala/Bourbon/7.83/7.67/7.33/7.67/7.67/0.11
+#La URL para probar es por No https://5000-eperezvazquez-coffeapi-02j2zdcqkh1.ws-us60.gitpod.io/Other/Other/7.42/7.33/7.42/7.25/7.33/0.0
 # No Other/Other/7.42/7.33/7.42/7.25/7.33/0.0
 # Yes Guatemala/Bourbon/7.83/7.67/7.33/7.67/7.67/0.11
 #Prueba
+# Para corre incluye al URL https://github.com/4GeeksAcademy/machine-learning-content/blob/master/07-4d-ml_deploy/deploy-model-using-flask-and-heroku.md\
+
+#Para ejecutar en terminal:
+#export FLASK_APP=app
+#export FLASK_ENV=development
+#flask run
+
+#Ejecutar pip install gunicorn
+
+
