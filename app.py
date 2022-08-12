@@ -11,7 +11,7 @@ app = Flask(__name__) # hace referencia al nombre del archivo
 #def hello_flask():
  #   return 'Hello Flask'
 
-#@app.route('/inicio')
+@app.route('/inicio')
 def show_home():
     return render_template('index.html')
 
