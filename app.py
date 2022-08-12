@@ -12,8 +12,8 @@ app = Flask(__name__) # hace referencia al nombre del archivo
  #   return 'Hello Flask'
 
 #@app.route('/inicio')
-#def show_home():
-   # return render_template('index.html')
+def show_home():
+    return render_template('index.html')
 
 @app.route('/<string:country>/<string:variety>/<float:aroma>/<float:aftertaste>/<float:acidity>/<float:body>/<float:balance>/<float:moisture>')
 def result(country, variety, aroma, aftertaste, acidity, body, balance, moisture):
