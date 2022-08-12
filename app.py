@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 
 app = Flask(__name__) # hace referencia al nombre del archivo
-
+model = pickle.load(open('coffee_model.pkl', 'rb'))
 
 #@app.route('/')
 #def hello_flask():
@@ -29,7 +29,6 @@ def result(country, variety, aroma, aftertaste, acidity, body, balance, moisture
         return jsonify(message = 'No es un cafe de primera'), 200
 
 
-
 #@app.route('/url_variables/<string:name>/<int:age>')
 #def url_variables(name, age):
 #    if age < 18:
@@ -37,9 +36,11 @@ def result(country, variety, aroma, aftertaste, acidity, body, balance, moisture
 #    else:
 #        return jsonify(message = ' Bienvenido ' + name ), 200
 
-if __name__ == '__main__':
-    app.run(debug=True, host='127.0.0.1', port=5000)
+#if __name__ == '__main__':
+ #   app.run(debug=True, host='127.0.0.1', port=5000)
 
+if __name__=="__main__":
+    app.run(port=5000, debug=True)
 
 #probar
 
