@@ -1,4 +1,4 @@
-!sudo pip install Flaskpip install flask
+pip freeze > requirements.txt!sudo pip install Flaskpip install flask
 from flask import Flask, render_template, jsonify, request
 import pickle
 import pandas as pd
